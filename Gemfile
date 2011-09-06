@@ -16,4 +16,7 @@ end
 
 group :test do
   gem 'turn', :require => false
+  gem 'capybara'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
