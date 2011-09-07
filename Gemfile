@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'pg'
 gem 'jquery-rails'
+gem 'clearance'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
@@ -19,4 +20,5 @@ group :test do
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
