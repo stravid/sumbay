@@ -1,0 +1,7 @@
+<%= form_for([@user, @account_entry]) do |form| %>
+  <%= form.label :description, "Description" %>
+  <%= form.text_field :description %>
+  <%= form.label :amount, "Amount" %>
+  <%= form.text_field :amount %>
+  <%= form.submit "Save" %>
+<% end %>

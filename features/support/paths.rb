@@ -11,17 +11,18 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
-    # Add more mappings here.
+    # Clearance
     when /the sign up page/i
-          sign_up_path
-        when /the sign in page/i
-          sign_in_path
-        when /the password reset request page/i
-          new_password_path
-    # Here is an example that pulls values out of the Regexp:
-    #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
+      sign_up_path
+    when /the sign in page/i
+      sign_in_path
+    when /the password reset request page/i
+      new_password_path
+
+    # Sumbay
+    when /the add account entry page/i
+      user = User.find_by_email("example@example.com")
+      new_user_account_entry_path(user)
 
     else
       begin

@@ -31,7 +31,24 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
-# Single-line step scoper
+
+
+Given /^I am signed in as a user$/ do
+  Given %{I am signed in as "example@example.com"}
+end
+
+And /^I create a new valid account entry$/ do
+  And %{I fill in "Description" with "Test"}
+  And %{I fill in "Amount" with "100"}
+  And %{I press "Save"}
+end
+
+And /^I should see a notice that my new entry was saved/ do
+  Then %{I should see "Your new entry was saved!"}
+end
+
+
+#Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
 end
