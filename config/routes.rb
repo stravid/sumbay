@@ -56,9 +56,7 @@ Sumbay::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-  #root :to => 'account_entries#new'
+  resources :account_entries
 
-  resources :users do
-    resources :account_entries
-  end
+  root :to => 'account_entries#index'
 end
