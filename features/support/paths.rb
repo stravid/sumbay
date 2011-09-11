@@ -21,8 +21,7 @@ module NavigationHelpers
 
     # Sumbay
     when /the add account entry page/i
-      user = User.find_by_email("example@example.com")
-      new_user_account_entry_path(user)
+      new_account_entry_path
 
     else
       begin

@@ -1,0 +1,13 @@
+<%= link_to "New Account Entry", new_account_entry_path %>
+
+<% if signed_in? %>
+  <%= current_user.email %>
+  <%= link_to "Sign out", sign_out_path, :method => :delete %>
+<% end %>
+
+<h1>Balance: <%= @sum %></h1>
+<ul>
+<% @account_entries.each do |entry| %>
+  <li><%= entry.description %> <%= entry.amount %></li>
+<% end %>
+</ul>
