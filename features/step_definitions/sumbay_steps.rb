@@ -1,35 +1,8 @@
-
-
-# And /^I create a new valid account entry$/ do
-#   Then %{I add the new expense "Test" which costs 100}
-# end
-
-
-
-And /^I have previously saved account entries$/ do
-  Given %{I am on the add account entry page}
-  Then %{I add the new expense "Test" which costs 100}
-end
-
-Then /^I add the new expense "(.*)" which costs (\d*)$/ do |description, amount|
-  Then %{I fill in "Description" with "#{description}"}
-  And %{I fill in "Amount" with "#{amount}"}
-  And %{I press "Save"}
-end
-
-Then /^I should see my current balance$/ do
-  Then %{I should see /Balance: \d*/}
-end
-
-And /^I should see my previously saved account entries$/ do
-  Then %{I should see "Test 100"}
-end
-
 ##
 # Use I18n
 ###
 Given /^I am signed in as a user$/ do
-  Given %{I am signed in as "example@example.com"}
+  Given %{I sign in}
 end
 
 And /^I should( not)? see a notice that my new entry was saved$/ do |switch|
@@ -48,4 +21,21 @@ end
 
 And /^I click the new account entry link$/ do
   click_link "New Account Entry"
+end
+
+And /^I have a "(.*)" entry which costs "(.*)"$/ do |description, amount|
+  And %{I am on the add account entry page}
+  And %{I create an account entry with the values "#{description}" and "#{amount}"}
+end
+
+Then /^I should see my current balance of "(.*)"$/ do |balance|
+  Then %{I should see "Balance: #{balance}"}
+end
+
+And /^I should see a "(.*)" entry costing "(.*)"$/ do |description, amount|
+  Then %{I should see "#{description} #{amount}"}
+end
+
+And /^I click the view account entries link$/ do
+  click_link "View Entries"
 end

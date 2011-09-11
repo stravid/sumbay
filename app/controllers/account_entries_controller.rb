@@ -1,5 +1,5 @@
 class AccountEntriesController < ApplicationController
-  include ApplicationHelper
+  include ApplicationHelper # really? should it be in a helper?
 
   before_filter :parse_amount_parameter, :only => [:create, :update]
   before_filter :authorize

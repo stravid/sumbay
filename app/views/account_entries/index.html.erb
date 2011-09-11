@@ -5,9 +5,9 @@
   <%= link_to "Sign out", sign_out_path, :method => :delete %>
 <% end %>
 
-<h1>Balance: <%= @sum %></h1>
+<h1>Balance: <%= number_with_precision(@sum, :precision => 2) %></h1>
 <ul>
 <% @account_entries.each do |entry| %>
-  <li><%= entry.description %> <%= entry.amount %></li>
+  <li><%= entry.description %> <%= number_with_precision(entry.amount, :precision => 2) %></li>
 <% end %>
 </ul>
