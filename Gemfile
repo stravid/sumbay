@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.10'
 gem 'pg'
 gem 'jquery-rails'
 gem 'clearance'
@@ -16,7 +16,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'shoulda'
-end  
+end
 
 group :test do
   gem 'turn', :require => false
